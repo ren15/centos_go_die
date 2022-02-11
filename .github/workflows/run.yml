@@ -19,4 +19,20 @@ jobs:
           ls 
           ls prod_images/centos_to_ubuntu_libs
 
+      - name: package
+        shell: bash
+        run: |
+          cd prod_images
+          tar cvzf ../centos_to_ubuntu_libs.tar.gz ./centos_to_ubuntu_libs
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          title: "Development Build"
+          files: |
+            centos_to_ubuntu_libs.tar.gz
+
+      
+
 
