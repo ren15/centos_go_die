@@ -11,10 +11,10 @@ rm -rf ${CACHE_DIR}/*
 rm -rf ${LIB_DST_DIR}/*
 
 file_to_download=(
-    "https://rpmfind.net/linux/epel/7/x86_64/Packages/n/nanomsg-1.1.5-6.el7.x86_64.rpm"
+    "https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/n/nanomsg-1.1.5-6.el7.x86_64.rpm"
     "https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/boost-program-options-1.53.0-28.el7.x86_64.rpm"
     "https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/lua-5.1.4-15.el7.x86_64.rpm"
-    "https://rpmfind.net/linux/centos/7.9.2009/updates/x86_64/Packages/openssl-libs-1.0.2k-22.el7_9.x86_64.rpm"
+    "https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/openssl-libs-1.0.2k-22.el7_9.x86_64.rpm"
     "https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/krb5-libs-1.15.1-50.el7.x86_64.rpm"
     "https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/keyutils-libs-1.5.8-3.el7.x86_64.rpm"
     "https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/libgomp-4.8.5-44.el7.x86_64.rpm"
