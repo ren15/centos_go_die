@@ -1,0 +1,22 @@
+name: ci
+
+on: push
+
+env:
+  DEBIAN_FRONTEND: noninteractive
+
+jobs:
+  run:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: run
+        shell: bash
+        run: |
+          bash scripts/prepare_centos_libs.sh
+          ls 
+          ls prod_images/centos_to_ubuntu_libs
+
+
