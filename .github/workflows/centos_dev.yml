@@ -35,6 +35,15 @@ jobs:
           git --version
           /usr/local/bin/git --version
 
+      - name: Setup curl 
+        run: |
+          wget https://curl.haxx.se/download/curl-7.67.0.tar.gz
+          tar xvf curl-7.67.0.tar.gz
+          cd curl-7.67.0
+          ./configure --with-ssl
+          make
+          make install
+
       - name: Setup brew
         run: |
           wget -c https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
