@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: system basic setup
         run: |
-          yum update -y && yum install -y curl openssl-devel
+          yum update -y && yum install -y curl openssl-devel git
 
       - name: Setup brew
         run: |
