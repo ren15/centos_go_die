@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: System basic setup
         run: |
-          yum update -y && yum install -y curl openssl-devel git
+          yum update -y && yum install -y curl openssl-devel git wget
 
       - name: RH csl setup
         run: |
@@ -33,6 +33,7 @@ jobs:
           cd git
           scl enable devtoolset-11 'gcc --version && make configure && ./configure --prefix=/usr/local && make all && make install'
           git --version
+          /usr/local/bin/git --version
 
       - name: Setup brew
         run: |
