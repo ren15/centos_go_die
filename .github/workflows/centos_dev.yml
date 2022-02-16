@@ -18,6 +18,12 @@ jobs:
         run: |
           yum update -y && yum install -y curl openssl-devel git
 
+      - name: RH csl setup
+        run: |
+          yum install -y centos-release-scl
+          yum install -y devtoolset-11*
+          scl enable devtoolset-11 'gcc --version'
+
       - name: Compile and install git
         run: |
           yum groupinstall 'Development Tools' -y
