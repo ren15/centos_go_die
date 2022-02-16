@@ -38,7 +38,7 @@ jobs:
       - name: Setup curl 
         run: |
           wget -q https://curl.haxx.se/download/curl-7.67.0.tar.gz
-          tar xf -q curl-7.67.0.tar.gz
+          tar xf curl-7.67.0.tar.gz
           cd curl-7.67.0
           ./configure --with-ssl --prefix=/usr
           make
