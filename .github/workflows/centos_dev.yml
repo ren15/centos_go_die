@@ -31,18 +31,19 @@ jobs:
             openssl-devel perl-devel zlib-devel make autoconf gcc gcc-c++
           git clone --depth 1 https://github.com/git/git.git
           cd git
-          scl enable devtoolset-11 'gcc --version && make configure && ./configure --prefix=/usr/local && make all -j$(nproc) && make install'
+          scl enable devtoolset-11 'gcc --version && make configure && ./configure --prefix=/usr && make all -j$(nproc) && make install'
           git --version
-          /usr/local/bin/git --version
+          /usr/bin/git --version
 
       - name: Setup curl 
         run: |
           wget https://curl.haxx.se/download/curl-7.67.0.tar.gz
           tar xvf curl-7.67.0.tar.gz
           cd curl-7.67.0
-          ./configure --with-ssl
+          ./configure --with-ssl --prefix=/usr
           make
           make install
+          /usr/bin/curl --version
 
       - name: Setup brew
         run: |
