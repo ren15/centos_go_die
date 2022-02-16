@@ -32,12 +32,14 @@ jobs:
           git clone --depth 1 https://github.com/git/git.git
           cd git
           scl enable devtoolset-11 'gcc --version && make configure && ./configure --prefix=/usr/local && make all && make install'
+          git --version
 
       - name: Setup brew
         run: |
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-          echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /github/home/.profile
+          wget -c https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+          scl enable devtoolset-11 'bash install.sh'
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew --version
 
       - name: Use brew
         run: |
