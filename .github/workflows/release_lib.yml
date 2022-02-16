@@ -1,6 +1,10 @@
-name: ci
+name: release_lib
 
-on: push
+on:
+  push:
+    paths:
+      - '.github/workflows/release_lib.yml'
+      - 'scripts/prepare_centos_libs.sh'
 
 env:
   DEBIAN_FRONTEND: noninteractive
