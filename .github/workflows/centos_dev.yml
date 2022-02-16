@@ -37,8 +37,8 @@ jobs:
 
       - name: Setup curl 
         run: |
-          wget https://curl.haxx.se/download/curl-7.67.0.tar.gz
-          tar xvf curl-7.67.0.tar.gz
+          wget -q https://curl.haxx.se/download/curl-7.67.0.tar.gz
+          tar xvf -q curl-7.67.0.tar.gz
           cd curl-7.67.0
           ./configure --with-ssl --prefix=/usr
           make
@@ -47,7 +47,7 @@ jobs:
 
       - name: Setup brew
         run: |
-          wget -c https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+          wget -q https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
           scl enable devtoolset-11 'bash install.sh'
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew --version
