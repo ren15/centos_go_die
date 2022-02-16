@@ -21,7 +21,7 @@ jobs:
       - name: Compile and install git
         run: |
           yum install -y dh-autoreconf curl-devel expat-devel gettext-devel \
-            openssl-devel perl-devel zlib-devel
+            openssl-devel perl-devel zlib-devel make 
           git clone --depth 1 https://github.com/git/git.git
           cd git
           make configure
