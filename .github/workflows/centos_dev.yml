@@ -31,7 +31,7 @@ jobs:
             openssl-devel perl-devel zlib-devel make autoconf gcc gcc-c++
           git clone --depth 1 https://github.com/git/git.git
           cd git
-          scl enable devtoolset-11 'gcc --version && make configure && ./configure --prefix=/usr/local && make all && make install'
+          scl enable devtoolset-11 'gcc --version && make configure && ./configure --prefix=/usr/local && make all -j$(nproc) && make install'
           git --version
           /usr/local/bin/git --version
 
