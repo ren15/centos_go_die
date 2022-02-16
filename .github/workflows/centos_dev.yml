@@ -1,0 +1,31 @@
+name: centos_dev
+
+on:
+  push:
+    paths:
+      - '.github/workflows/centos_dev.yml'
+
+env:
+  DEBIAN_FRONTEND: noninteractive
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    container:
+      image: centos:7
+    steps:
+      - name: system basic setup
+        run: |
+          yum update -y && yum install -y curl openssl-devel
+
+      - name: Setup brew
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /github/home/.profile
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+      - name: Use brew
+        run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew install gcc-10
+
