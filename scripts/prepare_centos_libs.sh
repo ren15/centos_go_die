@@ -20,6 +20,7 @@ file_to_download=(
     "https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/krb5-libs-1.15.1-50.el7.x86_64.rpm"
     "https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/keyutils-libs-1.5.8-3.el7.x86_64.rpm"
     "https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/libgomp-4.8.5-44.el7.x86_64.rpm"
+    "https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/readline-6.2-11.el7.x86_64.rpm"
 )
 
 for url in ${file_to_download[@]} ; do
